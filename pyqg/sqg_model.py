@@ -10,10 +10,10 @@ class SQGModel(model.Model):
         self,
         beta=0.,                    # gradient of coriolis parameter
         Nb = 1.,                    # Buoyancy frequency
-        #rd=0.,                      # deformation radius
+        f_0 = 1.,                   # coriolis parameter
+        rd=0.,                      # deformation radius (not used by SQG)
         H = 1.,                     # depth of layer
         U=0.,                       # max vel. of base-state
-        f_0=1.,                     # coriolis parameter
         **kwargs
         ):
         """
@@ -32,6 +32,7 @@ class SQGModel(model.Model):
         # physical
         self.beta = beta
         self.Nb = Nb
+        self.f_0 = f_0
         #self.rek = rek
         self.rd = rd
         self.H = H
